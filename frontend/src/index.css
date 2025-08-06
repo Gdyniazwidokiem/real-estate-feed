@@ -1,0 +1,119 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', sans-serif; background: #f5f7fb; color: #333; line-height: 1.6; }
+
+.app {
+  display: flex;
+  min-height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  gap: 24px;
+}
+
+header {
+  grid-column: 1 / -1;
+  padding: 16px 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  border: 1px solid #e0e0e0;
+  margin-bottom: 16px;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  color: #1a3b5d;
+}
+
+header p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+main.feed {
+  flex: 1;
+}
+
+.feed-card {
+  position: relative;
+  background: white;
+  border-radius: 10px;
+  padding: 18px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border: 1px solid #eaeaea;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.feed-card:hover { transform: translateY(-2px); }
+
+.feed-card.locked .overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.7);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  z-index: 10;
+  font-weight: 600;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.tag {
+  font-size: 0.8rem;
+  padding: 4px 8px;
+  background: #e3f2fd;
+  color: #1976d2;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.feed-card h3 {
+  font-size: 1.2rem;
+  color: #1a3b5d;
+  margin-bottom: 8px;
+}
+
+.feed-card .lead {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.sidebar {
+  width: 280px;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border: 1px solid #e0e0e0;
+  align-self: flex-start;
+}
+
+.sidebar button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  background: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.sidebar button:hover { background: #1565c0; }
+.sidebar button:disabled { background: #aaa; }
+
+@media (max-width: 768px) {
+  .app { flex-direction: column; }
+  .sidebar { width: 100%; }
+}
